@@ -16,7 +16,7 @@ Feature: Login to Parabank
     {
        "id": '#number',
        "firstName": '#string',
-       "lastName,": '#string',
+       "lastName": '#string',
        "address": {
             "street": '#string',
             "city": '#string',
@@ -35,3 +35,4 @@ Feature: Login to Parabank
     And path 'Chocorramo100*' //Password
     When method GET
     Then status 400
+    And match response contains 'Invalid username and/or password'
