@@ -4,8 +4,7 @@ Feature: Pay to Parabank
   Background:
     * url baseUrl
     * header Accept = 'application/json'
-    * def accountfrom = 19227
-    * der accountto = 98654    
+    * def accountId = 19227    
     * def amount = 25
     * def name = 'Pruebas Karate'
     * def street = '89-90 43'
@@ -36,6 +35,7 @@ Feature: Pay to Parabank
     """
     When method POST
     Then status 200
-    And match response contains '"payeeName"'
+    And match response == """ { "payeeName": "prueba postman", "amount": 25, "accountId": 19227 } """
+'
 
          
